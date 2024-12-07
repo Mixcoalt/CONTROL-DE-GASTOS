@@ -1,0 +1,16 @@
+export function formatCurrency(amount: number){
+    return new Intl.NumberFormat('en-Us', {style: 'currency', currency: 'USD'}).format(amount)
+}
+
+export function formatDate (dateStr: string): string{
+    const dateObjet = new Date(dateStr)
+    const options : Intl.DateTimeFormatOptions = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }
+
+    return new Intl.DateTimeFormat('es-ES', options).format(dateObjet)
+
+}
